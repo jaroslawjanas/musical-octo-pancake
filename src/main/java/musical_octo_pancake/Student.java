@@ -1,8 +1,8 @@
+package musical_octo_pancake;
+
 import org.joda.time.DateTime;
-import org.joda.time.Period;
 import org.joda.time.Years;
 import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,33 +16,42 @@ public class Student {
     private ArrayList<Module> modules = new ArrayList<Module>();
     private ArrayList<Course> courses = new ArrayList<Course>();
 
-    Student(){}
+    Student(){
+        this.id = (int)(Math.random() * ( 9999999 - 1111111 ));
+    }
+
+    Student(
+            String name,
+            String dob
+    ) {
+        this();
+        this.name = name;
+        setDob(dob);
+    }
 
     Student(
             String name,
             DateTime dob, // Date Of Birth
-            Integer id,
             ArrayList<Module> modules,
             ArrayList<Course> courses  // A student can't be in multiple courses, but I'm allowing for flexibility
     ) {
+        this();
         this.name = name;
         this.dob = dob;
-        this.id = id;
-        this.modules =modules;
+        this.modules = modules;
         this.courses = courses;
     }
 
     Student(
             String name,
             String dob,
-            Integer id,
             Module[] modules,
             Course course
     ) {
+        this();
         this.name = name;
         // Not handling other formats since it's outside of the scope of the assignment
         setDob(dob);
-        this.id = id;
         this.modules = new ArrayList<Module>(Arrays.asList(modules));
         this.courses = new ArrayList<Course>();
         this.courses.add(course);
@@ -77,10 +86,6 @@ public class Student {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getUsername() {

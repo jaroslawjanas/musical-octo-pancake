@@ -1,3 +1,5 @@
+package musical_octo_pancake;
+
 import java.util.ArrayList;
 
 public class Module {
