@@ -1,21 +1,21 @@
 package musical_octo_pancake;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import musical_octo_pancake.Student;
 import org.joda.time.DateTime;
+import org.joda.time.Years;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class StudentTest {
     private Student mockStudent;
+    private DateTime dob;
 
     @BeforeEach
     public void init(){
        mockStudent = new Student();
        mockStudent.setName("Josh");
-       mockStudent.setDob(new DateTime(1998, 12, 26, 0, 0));
-       mockStudent.setNow(new DateTime(2020, 1, 30, 0, 0));
+       dob = new DateTime(1998, 12, 26, 0, 0);
+       mockStudent.setDob(dob);
     }
 
     @Test
@@ -27,14 +27,15 @@ public class StudentTest {
     @Test
     public void studentGetAge() {
         assertNotNull(mockStudent.getAge());
-        assertEquals(21 ,mockStudent.getAge());
+        assertEquals(Years.yearsBetween(dob, DateTime.now()).getYears() ,mockStudent.getAge());
     }
 
     @Test
     public void studentSetDobString() {
         mockStudent.setDob("26/12/1997");
+        DateTime dob2 = new DateTime(1997, 12, 26, 0, 0);
         assertNotNull(mockStudent.getAge());
-        assertEquals(22, mockStudent.getAge());
+        assertEquals(Years.yearsBetween(dob2, DateTime.now()).getYears(), mockStudent.getAge());
     }
 
     @Test

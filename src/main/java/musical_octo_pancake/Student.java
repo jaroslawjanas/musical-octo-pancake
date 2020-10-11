@@ -5,10 +5,10 @@ import org.joda.time.Years;
 import org.joda.time.format.DateTimeFormat;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Student {
-    private DateTime now = DateTime.now();
+    private final int minId = 1111111;
+    private final int maxId = 9999999;
 
     private String name;
     private DateTime dob;
@@ -17,7 +17,7 @@ public class Student {
     private ArrayList<Course> courses = new ArrayList<Course>();
 
     Student(){
-        this.id = (int)(Math.random() * ( 9999999 - 1111111 ));
+        this.id = minId + (int)(Math.random() * ((maxId - minId) + 1));
     }
 
     Student(
@@ -31,30 +31,22 @@ public class Student {
 
     Student(
             String name,
-            DateTime dob, // Date Of Birth
-            ArrayList<Module> modules,
-            ArrayList<Course> courses  // A student can't be in multiple courses, but I'm allowing for flexibility
+            DateTime dob
     ) {
         this();
         this.name = name;
         this.dob = dob;
-        this.modules = modules;
-        this.courses = courses;
     }
 
     Student(
             String name,
-            String dob,
-            Module[] modules,
-            Course course
+            DateTime dob, // Date Of Birth
+            ArrayList<Module> modules,
+            ArrayList<Course> courses  // A student can't be in multiple courses, but I'm allowing for flexibility
     ) {
-        this();
-        this.name = name;
-        // Not handling other formats since it's outside of the scope of the assignment
-        setDob(dob);
-        this.modules = new ArrayList<Module>(Arrays.asList(modules));
-        this.courses = new ArrayList<Course>();
-        this.courses.add(course);
+        this(name, dob);
+        this.modules = modules;
+        this.courses = courses;
     }
 
     public String getName() {
@@ -67,7 +59,7 @@ public class Student {
 
     public Integer getAge() {
         if(dob != null){
-            return Years.yearsBetween(dob, now).getYears();
+            return Years.yearsBetween(dob, DateTime.now()).getYears();
         }
         return null;
     }
@@ -108,15 +100,4 @@ public class Student {
         this.courses = courses;
     }
 
-    public DateTime getNow() {
-        return now;
-    }
-
-    public void setNow(DateTime now) {
-        this.now = now;
-    }
-
-    public void setNow() {
-        setNow(DateTime.now());
-    }
 }

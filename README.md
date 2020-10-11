@@ -1,7 +1,7 @@
 # Musical Octo Pancake
 ![pancakes](https://i.imgur.com/2KnUGad.png)
 
-Musical Octo Pancake is exactly what it sound like, a new revolutionary trend in the dying world of Java. Don't wait till Java dies, kill it today with this amazing library. It's quick and simple!
+Musical Octo Pancake is exactly what it sounds like, a new revolutionary trend in the dying world of Java. Don't wait untill Java dies, kill it today with this amazing library. It's quick and simple!
 
 ## Prerequisites
 - Git
@@ -28,7 +28,7 @@ Almost there, now run
 mvn package
 ```
 
-to runt the tests and compile a jar file that you can use. After the process ends you can find the packaged jar file in `musical-octo-pancake\target\musical-octo-pancake-<version>-<release>.jar`
+to run the tests and compile a jar file that you can use. After the process ends you can find the packaged jar file in `musical-octo-pancake\target\musical-octo-pancake-<version>-<release>.jar`
 
 ## Usage
 
@@ -48,7 +48,7 @@ student.getName(); // "Josh22" - combination of name and age
 ```
 
 ## Contributing
-Pull requests, while unnecessary, are welcome,. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests, while unnecessary, are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 

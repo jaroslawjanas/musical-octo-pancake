@@ -6,6 +6,45 @@ public class Module {
     private String name;
     private String id;
     private ArrayList<Student> students = new ArrayList<Student>();
+    private ArrayList<Course> courses = new ArrayList<Course>();
+
+    Module(){
+    }
+
+    Module(
+            String name,
+            String id
+    ) {
+        this.name = name;
+        this.id = id;
+    }
+
+    Module(
+            String name,
+            String id,
+            ArrayList<Student> students,
+            ArrayList<Course> courses
+    ) {
+        this(name, id);
+        this.students = students;
+        this.courses = courses;
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public void removeStudent(Student student) {
+        students.remove(student);
+    }
+
+    public void addCourse(Course course) {
+        courses.add(course);
+    }
+
+    public void removeCourse(Course course) {
+        courses.remove(course);
+    }
 
     public String getId() {
         return id;
@@ -13,12 +52,6 @@ public class Module {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    private ArrayList<Course> courses = new ArrayList<Course>();
-
-    Module(){
-
     }
 
     public String getName() {
