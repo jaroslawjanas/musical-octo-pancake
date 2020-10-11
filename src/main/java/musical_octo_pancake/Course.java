@@ -1,6 +1,7 @@
 package musical_octo_pancake;
 
 import org.joda.time.DateTime;
+import org.joda.time.Years;
 import org.joda.time.format.DateTimeFormat;
 
 import java.util.ArrayList;
@@ -103,5 +104,9 @@ public class Course {
 
     public void setEndDate(String endDate) {
         this.endDate = stringToDate(endDate);
+    }
+
+    public Integer duration() {
+        return Years.yearsBetween(starDate, endDate).getYears();
     }
 }
