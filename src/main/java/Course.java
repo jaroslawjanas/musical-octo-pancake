@@ -21,4 +21,35 @@ public class Course {
         this.name = name;
     }
 
+    public ArrayList<Module> getModules() {
+        return modules;
+    }
+
+    public void setModules(ArrayList<Module> modules) {
+        this.modules = modules;
+    }
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(ArrayList<Student> students) {
+        this.students = students;
+    }
+
+    public DateTime getStarDate() {
+        return starDate;
+    }
+
+    public void setStarDate(DateTime starDate) {
+        this.starDate = starDate;
+    }
+
+    public DateTime getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(DateTime endDate) {
+        this.endDate = endDate;
+    }
 }
