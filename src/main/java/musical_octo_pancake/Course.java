@@ -109,4 +109,12 @@ public class Course {
     public Integer duration() {
         return Years.yearsBetween(starDate, endDate).getYears();
     }
+
+    public void addModule(Module module) {
+        modules.add(module);
+    }
+
+    public void removeModule(Module module) {
+        modules.remove(module);
+    }
 }
