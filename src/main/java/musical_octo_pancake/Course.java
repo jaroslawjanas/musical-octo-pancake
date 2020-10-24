@@ -112,9 +112,30 @@ public class Course {
 
     public void addModule(Module module) {
         modules.add(module);
+        students.addAll(module.getStudents());
+
+        for(Student student : module.getStudents()){
+            student.addCourse(this);
+            students.add(student);
+        }
+
+        module.addCourse(this);
     }
 
     public void removeModule(Module module) {
         modules.remove(module);
+
+        for(Student student : module.getStudents()){
+            student.removeCourse(this);
+            students.add(student);
+        }
+
+        module.removeCourse(this);
+    }
+
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+
+        return str.toString();
     }
 }

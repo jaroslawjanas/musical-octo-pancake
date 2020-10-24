@@ -17,15 +17,18 @@ public class ModuleTest {
     @Test
     public void moduleAddRemoveStudent() {
         Student mockStudent = new Student();
-        int mockStudentId = mockStudent.getId();
 
         mockModule.addStudent(mockStudent);
 
         assertEquals(1, mockModule.getStudents().size());
-        assertEquals(mockStudentId, mockModule.getStudents().get(0).getId());
+        assertEquals(mockStudent.getId(), mockModule.getStudents().get(0).getId());
+
+        assertEquals(1, mockStudent.getModules().size());
+        assertEquals(mockModule.getName(), mockStudent.getModules().get(0).getName());
 
         mockModule.removeStudent(mockStudent);
         assertEquals(0, mockModule.getStudents().size());
+        assertEquals(0, mockStudent.getModules().size());
     }
 
     @Test

@@ -9,12 +9,18 @@ import org.junit.jupiter.api.Test;
 public class CourseTest {
 
     private Course mockCourse;
+    private Module mockModule;
+    private Student mockStudent;
 
     @BeforeEach
     public void init() {
         mockCourse = new Course("Campieter Sciunce");
         mockCourse.setStarDate(DateTime.now().minusYears(2));
         mockCourse.setEndDate(DateTime.now().plusYears(2));
+
+        mockModule = new Module("Test Module 1233", "Test");
+
+        mockStudent = new Student("Josh", "26/01/1998");
     }
 
     @Test
@@ -24,16 +30,32 @@ public class CourseTest {
 
     @Test
     public void courseAddRemoveModule() {
-        Module mockModule = new Module("Test Module 1233", "Test");
-        String mockModuleName = mockModule.getName();
-
         mockCourse.addModule(mockModule);
 
         assertEquals(1, mockCourse.getModules().size());
-        assertEquals(mockModuleName, mockCourse.getModules().get(0).getName());
+        assertEquals(mockModule.getName(), mockCourse.getModules().get(0).getName());
+
+        assertEquals(1, mockModule.getCourses().size());
+        assertEquals(mockCourse.getName(), mockModule.getCourses().get(0).getName());
 
         mockCourse.removeModule(mockModule);
         assertEquals(0, mockCourse.getModules().size());
+        assertEquals(0, mockModule.getCourses().size());
+    }
+
+    @Test
+    public void courseAddRemoveModuleWithStudent() {
+        mockModule.addStudent(mockStudent);
+
+        mockCourse.addModule(mockModule);
+
+        assertEquals(2, mockCourse.getStudents().size());
+        assertEquals(1, mockStudent.getCourses().size());
+        assertEquals(mockCourse.getName(), mockStudent.getCourses().get(0).getName());
+
+        mockCourse.removeModule(mockModule);
+
+        assertEquals(0, mockStudent.getCourses().size());
     }
 
     @Test
@@ -42,4 +64,5 @@ public class CourseTest {
         mockCourse.setEndDate("23/01/1997");
         assertEquals(2, mockCourse.duration());
     }
+
 }
