@@ -49,7 +49,7 @@ public class CourseTest {
 
         mockCourse.addModule(mockModule);
 
-        assertEquals(2, mockCourse.getStudents().size());
+        assertEquals(1, mockCourse.getStudents().size());
         assertEquals(1, mockStudent.getCourses().size());
         assertEquals(mockCourse.getName(), mockStudent.getCourses().get(0).getName());
 

@@ -112,7 +112,6 @@ public class Course {
 
     public void addModule(Module module) {
         modules.add(module);
-        students.addAll(module.getStudents());
 
         for(Student student : module.getStudents()){
             student.addCourse(this);
