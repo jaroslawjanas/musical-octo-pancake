@@ -14,13 +14,13 @@ public class Course {
     private DateTime starDate;
     private DateTime endDate;
 
-    Course() {}
+    public Course() {}
 
-    Course (String name) {
+    public Course(String name) {
         this.name = name;
     }
 
-    Course (
+    public Course(
             String name,
             ArrayList<Module> modules,
             ArrayList<Student> students
@@ -30,7 +30,7 @@ public class Course {
         this.students = students;
     }
 
-    Course(
+    public Course(
             String name,
             ArrayList<Module> modules,
             ArrayList<Student> students,
@@ -42,7 +42,7 @@ public class Course {
         this.endDate = endDate;
     }
 
-    Course(
+    public Course(
             String name,
             ArrayList<Module> modules,
             ArrayList<Student> students,
