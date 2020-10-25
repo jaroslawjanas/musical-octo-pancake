@@ -126,7 +126,7 @@ public class Course {
 
         for(Student student : module.getStudents()){
             student.removeCourse(this);
-            students.add(student);
+            students.remove(student);
         }
 
         module.removeCourse(this);
