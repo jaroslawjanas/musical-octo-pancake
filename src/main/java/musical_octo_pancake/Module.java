@@ -87,12 +87,12 @@ public class Module {
         str.append("\n");
         str.append("  Id: ").append(id);
         str.append("\n");
-        str.append(" Courses: ");
+        str.append("  Courses: ");
         for (Course course : courses) {
             str.append("\n");
             str.append("   - ").append(course.getName());
         }
-        str.append(" Students: ");
+        str.append("  Students: ");
         for (Student student : students) {
             str.append("\n");
             str.append("   @ ").append(student.getName());

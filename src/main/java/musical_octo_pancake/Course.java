@@ -147,7 +147,7 @@ public class Course {
             str.append("   - ").append(module.getName()).append("(").append(module.getId()).append(")");
         }
         str.append("\n");
-        str.append(" Students: ");
+        str.append("  Students: ");
         for (Student student : students) {
             str.append("\n");
             str.append("   @ ").append(student.getName());
