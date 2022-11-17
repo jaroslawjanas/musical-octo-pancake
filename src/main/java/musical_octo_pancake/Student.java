@@ -20,7 +20,7 @@ public class Student {
         this.id = minId + (int)(Math.random() * ((maxId - minId) + 1));
     }
 
-    Student(
+    public Student(
             String name,
             String dob
     ) {
@@ -29,7 +29,7 @@ public class Student {
         setDob(dob);
     }
 
-    Student(
+    public Student(
             String name,
             DateTime dob
     ) {
@@ -38,7 +38,7 @@ public class Student {
         this.dob = dob;
     }
 
-    Student(
+    public Student(
             String name,
             DateTime dob, // Date Of Birth
             ArrayList<Module> modules,

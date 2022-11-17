@@ -8,10 +8,10 @@ public class Module {
     private ArrayList<Student> students = new ArrayList<Student>();
     private ArrayList<Course> courses = new ArrayList<Course>();
 
-    Module(){
+    public Module(){
     }
 
-    Module(
+    public Module(
             String name,
             String id
     ) {
@@ -19,7 +19,7 @@ public class Module {
         this.id = id;
     }
 
-    Module(
+    public Module(
             String name,
             String id,
             ArrayList<Student> students,
