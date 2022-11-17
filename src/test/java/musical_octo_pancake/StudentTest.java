@@ -14,7 +14,7 @@ public class StudentTest {
     public void init(){
        mockStudent = new Student();
        mockStudent.setName("Josh");
-       dob = new DateTime(1998, 12, 26, 0, 0);
+       dob = DateTime.now().minusYears(21);
        mockStudent.setDob(dob);
     }
 
