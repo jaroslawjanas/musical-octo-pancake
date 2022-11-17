@@ -92,6 +92,7 @@ public class Module {
             str.append("\n");
             str.append("   - ").append(course.getName());
         }
+        str.append("\n");
         str.append("  Students: ");
         for (Student student : students) {
             str.append("\n");
