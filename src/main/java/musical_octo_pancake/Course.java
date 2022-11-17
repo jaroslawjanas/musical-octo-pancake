@@ -135,7 +135,24 @@ public class Course {
 
     public String toString(){
         StringBuilder str = new StringBuilder();
-
+        str.append("\n");
+        str.append("Course Name: ").append(name);
+        str.append("\n");
+        str.append("  Start Date: ").append(starDate.toString());
+        str.append("\n");
+        str.append("  End Date: ").append(endDate.toString());
+        str.append("\n");
+        str.append("  Modules: ");
+        for (Module module : modules) {
+            str.append("\n");
+            str.append("   - ").append(module.getName()).append("(").append(module.getId()).append(")");
+        }
+        str.append("\n");
+        str.append(" Students: ");
+        for (Student student : students) {
+            str.append("\n");
+            str.append("   @ ").append(student.getName());
+        }
         return str.toString();
     }
 }

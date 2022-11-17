@@ -79,4 +79,24 @@ public class Module {
     public void setCourses(ArrayList<Course> courses) {
         this.courses = courses;
     }
+
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+        str.append("\n");
+        str.append("Module Name: ").append(name);
+        str.append("\n");
+        str.append("  Id: ").append(id);
+        str.append("\n");
+        str.append(" Courses: ");
+        for (Course course : courses) {
+            str.append("\n");
+            str.append("   - ").append(course.getName());
+        }
+        str.append(" Students: ");
+        for (Student student : students) {
+            str.append("\n");
+            str.append("   @ ").append(student.getName());
+        }
+        return str.toString();
+    }
 }

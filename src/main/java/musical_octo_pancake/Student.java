@@ -115,4 +115,27 @@ public class Student {
     void removeCourse (Course course) {
         courses.remove(course);
     }
+
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+        str.append("\n");
+        str.append("Student Name: ").append(name);
+        str.append("\n");
+        str.append("Student ID: ").append(id);
+        str.append("\n");
+        str.append("Student DOB: ").append(dob.toString());
+        str.append("\n");
+        str.append(" Courses: ");
+        for (Course course : courses) {
+            str.append("\n");
+            str.append("   - ").append(course.getName());
+        }
+        str.append("\n");
+        str.append("  Modules: ");
+        for (Module module : modules) {
+            str.append("\n");
+            str.append("   - ").append(module.getName()).append("(").append(module.getId()).append(")");
+        }
+        return str.toString();
+    }
 }
