@@ -137,9 +137,9 @@ public class Course {
         str.append("\n");
         str.append("Course Name: ").append(name);
         str.append("\n");
-        str.append("  Start Date: ").append(starDate.toString());
+        str.append("  Start Date: ").append(starDate.toLocalDate().toString());
         str.append("\n");
-        str.append("  End Date: ").append(endDate.toString());
+        str.append("  End Date: ").append(endDate.toLocalDate().toString());
         str.append("\n");
         str.append("  Modules: ");
         for (Module module : modules) {

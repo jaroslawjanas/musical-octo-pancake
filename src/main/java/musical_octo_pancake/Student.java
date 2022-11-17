@@ -123,7 +123,7 @@ public class Student {
         str.append("\n");
         str.append("Student ID: ").append(id);
         str.append("\n");
-        str.append("Student DOB: ").append(dob.toString());
+        str.append("Student DOB: ").append(dob.toLocalDate().toString());
         str.append("\n");
         str.append(" Courses: ");
         for (Course course : courses) {
