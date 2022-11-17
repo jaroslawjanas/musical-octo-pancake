@@ -23,6 +23,20 @@ public class CourseTest {
     }
 
     @Test
+    public void courseAddRemoveModule() {
+        Module mockModule = new Module("Test Module 1233", "Test");
+        String mockModuleName = mockModule.getName();
+
+        mockCourse.addModule(mockModule);
+
+        assertEquals(1, mockCourse.getModules().size());
+        assertEquals(mockModuleName, mockCourse.getModules().get(0).getName());
+
+        mockCourse.removeModule(mockModule);
+        assertEquals(0, mockCourse.getModules().size());
+    }
+
+    @Test
     public void courseSetDatesString() {
         mockCourse.setStarDate("22/01/1995");
         mockCourse.setEndDate("23/01/1997");
