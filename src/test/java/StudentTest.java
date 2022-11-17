@@ -24,4 +24,10 @@ public class StudentTest {
     public void studentGetAge() {
         assertEquals(21 ,mockStudent.getAge());
     }
+
+    @Test
+    public void studentSetDobString() {
+        mockStudent.setDob("26/12/1997");
+        assertEquals(22, mockStudent.getAge());
+    }
 }
