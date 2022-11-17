@@ -3,6 +3,10 @@ language: java
 jdk:
   - oraclejdk11
 
+build:
+  ci:
+    - mvn clean package
+
 # Optional: select the node pool or node pools you want to run this job on,if different from default
 # runtime:
 
@@ -71,3 +75,4 @@ jdk:
 #     - integrationName:
 #       type:
 #       agent_only:
+ 
