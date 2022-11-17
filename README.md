@@ -1,7 +1,10 @@
 # Musical Octo Pancake
-![pancakes](https://i.imgur.com/2KnUGad.png)
+
+[![Build Status](https://app.travis-ci.com/jaroslawjanas/musical-octo-pancake.svg?branch=master)](https://app.travis-ci.com/jaroslawjanas/musical-octo-pancake)
 
 Musical Octo Pancake is exactly what it sounds like, a new revolutionary trend in the dying world of Java. Don't wait for Java to die, kill it today with this amazing library. It's quick and simple!
+
+![pancakes](https://i.imgur.com/2KnUGad.png)
 
 ## Prerequisites
 - Git
