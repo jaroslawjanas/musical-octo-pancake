@@ -6,7 +6,7 @@
 
     <groupId>Ertagon</groupId>
     <artifactId>musical-octo-pancake</artifactId>
-    <version>1.0-Alpha</version>
+    <version>1.1-Alpha</version>
 
     <description>NUIG Assignment</description>
     <build>
@@ -31,6 +31,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.release>11</maven.compiler.release>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <junit-platform.version>5.7.0</junit-platform.version>
     </properties>
 
