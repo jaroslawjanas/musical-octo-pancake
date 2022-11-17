@@ -32,17 +32,19 @@ public class Module {
 
     public void addStudent(Student student) {
         students.add(student);
+        student.addModule(this);
     }
 
     public void removeStudent(Student student) {
+        student.removeModule(this);
         students.remove(student);
     }
 
-    public void addCourse(Course course) {
+    void addCourse(Course course) {
         courses.add(course);
     }
 
-    public void removeCourse(Course course) {
+    void removeCourse(Course course) {
         courses.remove(course);
     }
 

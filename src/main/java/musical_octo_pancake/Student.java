@@ -100,4 +100,19 @@ public class Student {
         this.courses = courses;
     }
 
+    void addModule (Module module) {
+        modules.add(module);
+    }
+
+    void removeModule (Module module) {
+        modules.remove(module);
+    }
+
+    void addCourse (Course course) {
+        courses.add(course);
+    }
+
+    void removeCourse (Course course) {
+        courses.remove(course);
+    }
 }
