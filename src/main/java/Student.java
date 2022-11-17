@@ -1,13 +1,16 @@
 import org.joda.time.DateTime;
+import org.joda.time.Period;
+import org.joda.time.Years;
 import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Student {
+    private DateTime now = DateTime.now();
 
     private String name;
-    private Integer age;
     private DateTime dob;
     private Integer id;
     private ArrayList<Module> modules = new ArrayList<Module>();
@@ -17,31 +20,28 @@ public class Student {
 
     Student(
             String name,
-            Integer age,
             DateTime dob, // Date Of Birth
             Integer id,
             ArrayList<Module> modules,
-            ArrayList<Course> courses  // a student can't be in multiple courses, but I'm allowing for flexibility
+            ArrayList<Course> courses  // A student can't be in multiple courses, but I'm allowing for flexibility
     ) {
         this.name = name;
-        this.age = age;
         this.dob = dob;
         this.id = id;
         this.modules =modules;
+        this.courses = courses;
     }
 
     Student(
             String name,
-            Integer age,
             String dob,
             Integer id,
             Module[] modules,
             Course course
     ) {
         this.name = name;
-        this.age = age;
         // Not handling other formats since it's outside of the scope of the assignment
-        this.dob = DateTime.parse(dob, DateTimeFormat.forPattern("dd/MM/yyyy"));
+        setDob(dob);
         this.id = id;
         this.modules = new ArrayList<Module>(Arrays.asList(modules));
         this.courses = new ArrayList<Course>();
@@ -57,11 +57,10 @@ public class Student {
     }
 
     public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
+        if(dob != null){
+            return Years.yearsBetween(dob, now).getYears();
+        }
+        return null;
     }
 
     public DateTime getDob() {
@@ -70,6 +69,10 @@ public class Student {
 
     public void setDob(DateTime dob) {
         this.dob = dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = DateTime.parse(dob, DateTimeFormat.forPattern("dd/MM/yyyy"));
     }
 
     public Integer getId() {
@@ -81,7 +84,7 @@ public class Student {
     }
 
     public String getUsername() {
-        return name+age;
+        return name+getAge();
     }
 
     public ArrayList<Module> getModules() {
@@ -100,4 +103,15 @@ public class Student {
         this.courses = courses;
     }
 
+    public DateTime getNow() {
+        return now;
+    }
+
+    public void setNow(DateTime now) {
+        this.now = now;
+    }
+
+    public void setNow() {
+        setNow(DateTime.now());
+    }
 }
