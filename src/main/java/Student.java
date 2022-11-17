@@ -1,6 +1,5 @@
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +10,6 @@ public class Student {
     private Integer age;
     private DateTime dob;
     private Integer id;
-    private String username;
     private ArrayList<Module> modules = new ArrayList<Module>();
     private ArrayList<Course> courses = new ArrayList<Course>();
 
@@ -22,7 +20,6 @@ public class Student {
             Integer age,
             DateTime dob, // Date Of Birth
             Integer id,
-            String username,
             ArrayList<Module> modules,
             ArrayList<Course> courses  // a student can't be in multiple courses, but I'm allowing for flexibility
     ) {
@@ -30,7 +27,6 @@ public class Student {
         this.age = age;
         this.dob = dob;
         this.id = id;
-        this.username = username;
         this.modules =modules;
     }
 
@@ -39,7 +35,6 @@ public class Student {
             Integer age,
             String dob,
             Integer id,
-            String username,
             Module[] modules,
             Course course
     ) {
@@ -48,7 +43,6 @@ public class Student {
         // Not handling other formats since it's outside of the scope of the assignment
         this.dob = DateTime.parse(dob, DateTimeFormat.forPattern("dd/MM/yyyy"));
         this.id = id;
-        this.username = username;
         this.modules = new ArrayList<Module>(Arrays.asList(modules));
         this.courses = new ArrayList<Course>();
         this.courses.add(course);
@@ -87,11 +81,7 @@ public class Student {
     }
 
     public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+        return name+age;
     }
 
     public ArrayList<Module> getModules() {
