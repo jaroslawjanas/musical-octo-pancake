@@ -109,7 +109,9 @@ public class Student {
     }
 
     void addCourse (Course course) {
-        courses.add(course);
+        if(!courses.contains(course)) {
+            courses.add(course);
+        }
     }
 
     void removeCourse (Course course) {

@@ -115,7 +115,9 @@ public class Course {
 
         for(Student student : module.getStudents()){
             student.addCourse(this);
-            students.add(student);
+            if(!students.contains(student)) {
+                students.add(student);
+            }
         }
 
         module.addCourse(this);
